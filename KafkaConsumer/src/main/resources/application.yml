@@ -1,0 +1,32 @@
+spring:
+  h2:
+    console:
+      enabled: true
+  datasource:
+    url: jdbc:h2:file:D:/h2data/kafkadb;DB_CLOSE_ON_EXIT=FALSE;
+    username: sa
+    password: 
+    driver-class-name: org.h2.Driver
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+  kafka:
+    consumer:
+      bootstrap-servers: localhost:9092
+      group-id: employee-group
+    producer:
+      bootstrap-servers: localhost:9092
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.apache.kafka.common.serialization.StringSerializer 
+      
+employee-in-topic: employee-in-topic
+employee-out-topic: employee-out-topic
+
+IV-VECTOR: encryptionIntVec
+SECRET-KEY: aesEncryptionKey
+
+
+server:
+  port: 7070
+
